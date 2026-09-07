@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw Docker Guide | SlackとSakana.aiではじめる自己ホストAI</title>
+  <meta name="description" content="DockerでOpenClawを立ち上げ、Sakana.aiをLLMに設定し、Slackから会話する初心者向けチュートリアルサイト。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./index.html"><span class="logo">🦞</span> OpenClaw Guide</a>
+      <nav class="nav-links">
+        <a class="active" href="./index.html">概要</a>
+        <a href="./tutorial.html">実装チュートリアル</a>
+        <a href="./operations.html">運用とトラブルシュート</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">Self-hosted AI tutorial · 2026</div>
+      <h1>Slackで動く自分専用AI。<br />DockerでOpenClawを立ち上げる。</h1>
+      <p class="lede">公式Docker経路でGatewayを起動し、Sakana.ai（Namazu）を接続し、Slackから会話するまでをコピー実行できる手順で解説します。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="./tutorial.html">ステップバイステップで実装する</a>
+        <a class="btn btn-ghost" href="#overview">まず全体像を見る</a>
+      </div>
+    </section>
+    <section class="grid-3">
+      <article class="card"><h3>1. Gatewayを起動</h3><p>公式イメージとComposeでポート18789まで到達します。</p></article>
+      <article class="card"><h3>2. Sakana.aiを接続</h3><p>Namazuを主モデルにするOpenAI互換設定です。</p></article>
+      <article class="card"><h3>3. Slackで会話</h3><p>Socket Modeなら公開URLは不要です。</p></article>
+    </section>
+    <section class="section" id="overview">
+      <h2>OpenClawとは何か</h2>
+      <p>チャットに住む自己ホスト型AI秘書です。設定と記憶は自分のホストに残ります。</p>
+      <div class="callout tip"><strong>ChatGPTとの違い</strong>ChatGPTは会話相手。OpenClawは実行基盤で、Slackを窓口にして作業します。</div>
+      <pre class="arch">あなた → Slack → Gateway :18789 → Sakana.ai / Workspace / Sandbox</pre>
+    </section>
+    <section class="section">
+      <h2>同名プロジェクトに注意</h2>
+      <div class="callout warn"><strong>このOpenClawはゲームではありません</strong>画面はブラウザとSlack、アセットは ~/.openclaw/workspace です。X11転送やゲームデータは不要です。</div>
+      <p><a class="btn btn-primary" href="./tutorial.html">チュートリアルを開始する</a></p>
+    </section>
+  </main>
+  <footer><div class="wrap">非公式ガイド · 正本は docs.openclaw.ai</div></footer>
+  <script src="./assets/app.js"></script>
+</body>
+</html>
